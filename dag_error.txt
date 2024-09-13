@@ -1,6 +1,7 @@
 Broken DAG: [/usr/local/airflow/dags/taskflow.py]
 Traceback (most recent call last):
   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
-  File "/usr/local/airflow/dags/taskflow.py", line 1, in <module>
-    from airflow import dag
-ImportError: cannot import name 'dag' from 'airflow' (/usr/local/lib/python3.12/site-packages/airflow/__init__.py)
+  File "/usr/local/airflow/dags/taskflow.py", line 23, in <module>
+    python_callable=_task_a,
+                    ^^^^^^^
+NameError: name '_task_a' is not defined. Did you mean: '_task_'?
