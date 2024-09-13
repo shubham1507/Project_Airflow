@@ -1,5 +1,5 @@
-from airflow import dag
-from airflow.operators.python import PythonOPerator
+from airflow import DAG
+from airflow.operators.python import PythonOperator
 from datetime import datetime
 
 def _task_():
@@ -12,17 +12,18 @@ def _taskB_(ti=None):
 
 with DAG(
     dag_id='taskflow',
+    start_date=datetime(2024,9,13),
     schedule='@daily',
     catchup=False,
     tags=['stock_market']
 ):
 
-    task_a = PythonOPerator(
+    task_a = PythonOperator(
         task_id='task_a',
         python_callable=_task_a,
     )
         
-    task_b = PythonOPerator(
+    task_b = PythonOperator(
         task_id='task_b',
         python_callable=_task_b,
     )   
