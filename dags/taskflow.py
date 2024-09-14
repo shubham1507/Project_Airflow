@@ -2,11 +2,11 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime
 
-def _task_():
+def _task_a():
     print("Task A")
     return 42
 
-def _taskB_(ti=None):
+def _task_b(ti=None):
     print("Task B")
     print(ti.xcom_pull(task_ids='task_a'))
 
@@ -15,7 +15,7 @@ with DAG(
     start_date=datetime(2024,9,13),
     schedule='@daily',
     catchup=False,
-    tags=['stock_market']
+    tags=['taskflow1']
 ):
 
     task_a = PythonOperator(

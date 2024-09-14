@@ -1,7 +1,40 @@
-Broken DAG: [/usr/local/airflow/dags/taskflow.py]
-Traceback (most recent call last):
-  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
-  File "/usr/local/airflow/dags/taskflow.py", line 23, in <module>
-    python_callable=_task_a,
-                    ^^^^^^^
-NameError: name '_task_a' is not defined. Did you mean: '_task_'?
+astro@c2909f2f87e9:/usr/local/airflow$ airflow task test stock_market is_api_available 2024-01-01
+[2024-09-14T10:56:20.237+0000] {plugin.py:32} WARNING - Astro managed secrets backend is disabled
+Usage: airflow [-h] GROUP_OR_COMMAND ...
+
+Positional Arguments:
+  GROUP_OR_COMMAND
+
+    Groups
+      config         View configuration
+      connections    Manage connections
+      dags           Manage DAGs
+      db             Database operations
+      jobs           Manage jobs
+      pools          Manage pools
+      providers      Display providers
+      roles          Manage roles
+      tasks          Manage tasks
+      users          Manage users
+      variables      Manage variables
+
+    Commands:
+      cheat-sheet    Display cheat sheet
+      dag-processor  Start a standalone Dag Processor instance
+      info           Show information about current Airflow and environment
+      kerberos       Start a kerberos ticket renewer
+      plugins        Dump information about loaded plugins
+      rotate-fernet-key
+                     Rotate encrypted connection credentials and variables
+      scheduler      Start a scheduler instance
+      standalone     Run an all-in-one copy of Airflow
+      sync-perm      Update permissions for existing roles and optionally DAGs
+      triggerer      Start a triggerer instance
+      version        Show the version
+      webserver      Start a Airflow webserver instance
+
+Options:
+  -h, --help         show this help message and exit
+
+airflow command error: argument GROUP_OR_COMMAND: invalid choice: 'task' (choose from 'cheat-sheet', 'config', 'connections', 'dag-processor', 'dags', 'db', 'info', 'jobs', 'kerberos', 'plugins', 'pools', 'providers', 'roles', 'rotate-fernet-key', 'scheduler', 'standalone', 'sync-perm', 'tasks', 'triggerer', 'users', 'variables', 'version', 'webserver'), see help above.
+astro@c2909f2f87e9:/usr/local/airflow$ 
